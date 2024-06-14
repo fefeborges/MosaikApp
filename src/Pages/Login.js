@@ -4,8 +4,8 @@ import { AuthContext } from '../Context/AuthContext';
 
 export default function Login() {
 
-    const [email, setEmail] = useState("");
-    const [senha, setSenha] = useState("");
+    const [email, setEmail] = useState('');
+    const [senha, setSenha] = useState('');
 
     const { Login, error } = useContext(AuthContext);
 

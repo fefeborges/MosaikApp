@@ -1,78 +1,74 @@
-import { View, Text, StyleSheet, Image } from 'react-native'
+import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-export default function Produto({ title, image, description, price, category, rating }) {
+export default function Produto({ titulo, imagem, preco }) {
     return (
         <View style={css.container}>
-            <View style={css.boxTitle}>
-                <View style={css.circleAvatar}></View>
-                <Text style={css.title}>{title}</Text>
+            <View style={css.boximagem}>
+                <Image source={{ uri: imagem }} style={css.imagem}/>
             </View>
-            <View style={css.boxImage}>
-                <Image source={{ uri: image }} style={css.imagem}/>
+            <View style={css.info}>
+                <View style={css.boxtitulo}>
+                    <Text style={css.titulo}>{titulo}</Text>
+                    <Text style={css.preco}>R${preco}</Text>
+                </View>
+                <TouchableOpacity style={css.boxcarrinho}>
+                    <MaterialCommunityIcons style={css.carrinho} name="bag-personal-outline" color={'black'} size={35} />
+                </TouchableOpacity> 
             </View>
-            <View style={css.descriptionBox}>
-                <Text style={css.descriptionText}>{description}</Text>
-            </View>
-            <View style={css.categoryBox}>
-                <Text style={css.categoryText}>{category}</Text>
-            </View>
-            
         </View>
     )
 }
 const css = StyleSheet.create({
     container: {
         width: "100%",
-        height: 600
+        height: 300,
+        backgroundColor: '#FFFFFF'
     },
-    boxTitle: {
-        width: "100%",
+    boxtitulo: {
+        width: "65%",
         display: "flex",
-        flexDirection: "row",
-        justifyContent: "flex-start",
+        textAlign: 'center',
         alignItems: "center",
-        marginBottom: 10,
-        paddingLeft: 5
+        paddingLeft: 5,
     },
-    circleAvatar: {
-        width: 30,
-        height: 30,
+    titulo: {
+        fontSize: 14,
+        alignSelf: 'flex-start',
+        marginLeft: 7,
+    },
+    preco: {
+        fontSize: 16,
+        alignSelf: 'flex-start',
+        marginLeft: 7,
+        color: '#465340',
+        fontWeight: 'bold'
+    },
+    boxcarrinho: {
+        height: 40,
+        width: "25%",
+        width: 45,
+        backgroundColor: "#ACC5A0",
         borderRadius: 50,
-        backgroundColor: "white",
-        marginRight: 10
+        justifyContent: 'center',
+        marginRight: 10,
     },
-    title: {
-        color: "white",
-        textAlign: "center"
+    carrinho: {
+        alignSelf: 'center',
+        fontSize: 30,
     },
-    boxImage: {
-        width: "100%",
-        height: 390
+    info: {
+        flexDirection: 'row',
+        width: '100%',
+        justifyContent: 'space-between'
     },
     imagem: {
-        width: "100%",
-        height: "100%",
-        resizeMode: "cover"
-    },
-    categoryBox: {
-        width: "100%",
-        marginTop: 15
-    },
-    descriptionBox: {
-        width: "100%",
-        marginTop: 15,
-        padding: 10
-    },
-    descriptionText: {
-        color: "white",
-        textAlign: "justify"
-    },
-    categoryBox: {
-        width: "100%",
-        padding: 10
-    },
-    categoryText: {
-        color: "white"
+        height: 200,
+        width: 160,
+        resizeMode: 'cover',
+        alignSelf: 'center',
+        marginTop: 10,
+        marginBottom: 15
     }
 })
