@@ -62,6 +62,19 @@ export default function Rotas() {
                         ),
                     }}
                 />
+                 <Tab.Screen
+                    name="Sacola"
+                    component={Sacola}
+                    options={{
+                        tabBarIcon: ({ color, size }) => (
+                            <MaterialCommunityIcons name="bag-personal-outline" color={color} size={30} />
+                        ),
+                        tabBarBadge: 5,
+                        tabBarBadgeStyle: {
+                            backgroundColor: '#D9F0CE'
+                        }
+                    }}
+                />
             </Tab.Navigator>
         </NavigationContainer>
     )
