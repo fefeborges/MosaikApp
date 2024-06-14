@@ -1,10 +1,17 @@
-import { View, Text, StyleSheet, FlatList } from 'react-native'
+import { View, Text, StyleSheet, FlatList, Image, ScrollView } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import Produto from '../Components/Produto';
-
+import Categorias from '../Components/Categorias';
+import Header from '../Components/Header';
 
 
 export default function Home() {
+  
+  const banner = [
+    require('../../assets/vestidofarm.jpg'),
+   require('../../assets/vestidofarm.jpg'), 
+   require('../../assets/vestidofarm.jpg'),  
+];
 
   const [produtos, setProdutos] = useState([]);
 
@@ -22,39 +29,77 @@ export default function Home() {
 
   useEffect(() => {
     getProdutos();
+
   }, [])
 
+  
+
   return (
-    <View style={css.container}>
-      {produtos ?
-        <>
-          
-          <FlatList
-            data={produtos}
-            renderItem={({ item }) => <Produto title={item.title} price={item.price} image={item.image} description={item.description} category={item.category} rating={item.rating} />}
-            keyExtractor={(item) => item.id}
-            contentContainerStyle={{ height: (produtos.length * 600) + 110 }}
-          />
-        </>
-        :
-        <Text style={css.text}>Carregando produtos...</Text>
-      }
+    <ScrollView style={css.container}>
+
+     <Header/>
+
+     <Categorias />
+     
+     
+    <View style={css.vales}>
+      <View style={css.boxTextVale}>
+        <Text style={css.textvale}>Vale - Presentes</Text>
+      </View>
+        
+    <View style={css.boxImagem}>
+      <Image style={css.imagem} source={ require ("../../assets/valeazul.png")  } />
+      <Image style={css.imagem} source={ require ("../../assets/valepassaro.png")  } />
+      <Image style={css.imagem} source={ require ("../../assets/valelaranja.png")  } />
+     </View>
+     <View style={css.boxImagem}>
+      <Image style={css.imagem} source={ require ("../../assets/valeverde.png")  } />
+      <Image style={css.imagem} source={ require ("../../assets/valebanana.png")  } />
+      <Image style={css.imagem} source={ require ("../../assets/valevermelho.png")  } />
+     </View>
     </View>
+     
+     
+
+    </ScrollView>
   )
 }
 const css = StyleSheet.create({
   container: {
-    backgroundColor: "#191919",
+    backgroundColor: "#F4F4F4",
     flexGrow: 1,
-    color: "white",
-    justifyContent: "center",
-    alignItems: "center"
   },
   text: {
-    color: "white"
+    
+    color: "black"
   },
-  stories: {
+  vales: {
+    top: 100,
+    width: "90%",
+    height: 500,   
+  },
+  boxTextVale:{
+    alignSelf: "center",
+    marginLeft: 35,
+  },
+  textvale:{
+    fontSize: 16,
+    top: 200,
+  },
+  boxImagem:{
+    height:200,
     width: "100%",
-    height: 100
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignSelf: "center",
+    marginLeft: 35,
+    gap: 10,
+    top: 230,
+  },
+  imagem: {
+    width: 100,
+    height: 160,
+    borderRadius: 20,
   }
 })

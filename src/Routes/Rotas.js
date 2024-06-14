@@ -8,6 +8,7 @@ import { AuthContext } from '../Context/AuthContext';
 
 import Home from '../Pages/Home';
 import Login from '../Pages/Login';
+import Header from '../Components/Header';
 import Pecas from '../Pages/Pecas';
 import Sacola from '../Pages/Sacola';
 import Cadastro from '../Pages/Cadastro';
@@ -66,7 +67,7 @@ export default function Rotas() {
                         ),
                     }}
                 />
-                <Tab.Screen
+                 <Tab.Screen
                     name="Sacola"
                     component={Sacola}
                     options={{
