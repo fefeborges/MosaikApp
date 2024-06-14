@@ -1,7 +1,8 @@
 import { View, Text, StyleSheet, FlatList, Image, ScrollView } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import Produto from '../Components/Produto';
-import Stories from '../Components/Stories';
+import Categorias from '../Components/Categorias';
+import Header from '../Components/Header';
 
 
 export default function Home() {
@@ -34,20 +35,28 @@ export default function Home() {
   
 
   return (
-    <View style={css.container}>
-      {produtos ?
-        <>
-          <Stories produtos={produtos} />
-          <FlatList
-            data={produtos}
-            renderItem={({ item }) => <Produto title={item.title} price={item.price} image={item.image} description={item.description} category={item.category} rating={item.rating} />}
-            keyExtractor={(item) => item.id}
-            contentContainerStyle={{ height: (produtos.length * 600) + 110 }}
-          />
-        </>
-        :
-        <Text style={css.text}>Carregando produtos...</Text>
-      }
+    <ScrollView style={css.container}>
+
+     <Header/>
+
+     <Categorias />
+     
+     
+    <View style={css.vales}>
+      <View style={css.boxTextVale}>
+        <Text style={css.textvale}>Vale - Presentes</Text>
+      </View>
+        
+    <View style={css.boxImagem}>
+      <Image style={css.imagem} source={ require ("../../assets/valeazul.png")  } />
+      <Image style={css.imagem} source={ require ("../../assets/valepassaro.png")  } />
+      <Image style={css.imagem} source={ require ("../../assets/valelaranja.png")  } />
+     </View>
+     <View style={css.boxImagem}>
+      <Image style={css.imagem} source={ require ("../../assets/valeverde.png")  } />
+      <Image style={css.imagem} source={ require ("../../assets/valebanana.png")  } />
+      <Image style={css.imagem} source={ require ("../../assets/valevermelho.png")  } />
+     </View>
     </View>
      
      
