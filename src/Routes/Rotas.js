@@ -1,17 +1,15 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import React from 'react';
 
 import { useContext } from 'react';
 import { AuthContext } from '../Context/AuthContext';
 
 import Home from '../Pages/Home';
-import Busca from '../Pages/Busca';
 import Login from '../Pages/Login';
-import Videos from '../Pages/Videos';
-import Perfil from '../Pages/Perfil';
-import Inserir from '../Pages/Inserir';
-
+import Pecas from '../Pages/Pecas';
+import Sacola from '../Pages/Sacola';
 
 const Tab = createBottomTabNavigator();
 
@@ -27,21 +25,53 @@ export default function Rotas() {
         <NavigationContainer>
             <Tab.Navigator
                 screenOptions={{
-                    headerShown: false,
-                    tabBarShowLabel: false,
                     tabBarStyle: {
-                        backgroundColor: '#191919',
+                        backgroundColor: '#ACC5A0',
+                        height: 60
                     },
-                    tabBarActiveTintColor: "white"
+                    tabBarActiveTintColor: "black",
+                    tabBarInactiveTintColor: "#62735B",
+                    tabBarLabelStyle: { fontSize: 12 }
                 }}
             >
                 <Tab.Screen
-                    name="Home"
+                    name="Início"
                     component={Home}
                     options={{
                         tabBarIcon: ({ color, size }) => (
-                            <MaterialCommunityIcons name="home" color={color} size={size} />
+                            <MaterialCommunityIcons name="home-outline" color={color} size={35} />
                         ),
+                    }}
+                />
+                <Tab.Screen
+                    name="Só na FARM"
+                    component={Pecas}
+                    options={{
+                        tabBarIcon: ({ color, size }) => (
+                            <MaterialCommunityIcons name="sprout-outline" color={color} size={30} />
+                        ),
+                    }}
+                />
+                <Tab.Screen
+                    name="Perfil"
+                    component={Home}
+                    options={{
+                        tabBarIcon: ({ color, size }) => (
+                            <MaterialCommunityIcons name="bee" color={color} size={45} />
+                        ),
+                    }}
+                />
+                <Tab.Screen
+                    name="Sacola"
+                    component={Sacola}
+                    options={{
+                        tabBarIcon: ({ color, size }) => (
+                            <MaterialCommunityIcons name="bag-personal-outline" color={color} size={30} />
+                        ),
+                        tabBarBadge: 5,
+                        tabBarBadgeStyle: {
+                            backgroundColor: '#D9F0CE'
+                        }
                     }}
                 />
             </Tab.Navigator>
