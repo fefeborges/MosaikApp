@@ -6,11 +6,9 @@ import { useContext } from 'react';
 import { AuthContext } from '../Context/AuthContext';
 
 import Home from '../Pages/Home';
-import Busca from '../Pages/Busca';
 import Login from '../Pages/Login';
-import Videos from '../Pages/Videos';
-import Perfil from '../Pages/Perfil';
-import Inserir from '../Pages/Inserir';
+import Header from '../Components/Header';
+
 
 
 const Tab = createBottomTabNavigator();
@@ -44,6 +42,7 @@ export default function Rotas() {
                         ),
                     }}
                 />
+                
             </Tab.Navigator>
         </NavigationContainer>
     )
