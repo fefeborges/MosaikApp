@@ -10,17 +10,22 @@ import Home from '../Pages/Home';
 import Login from '../Pages/Login';
 import Pecas from '../Pages/Pecas';
 import Sacola from '../Pages/Sacola';
+import Cadastro from '../Pages/Cadastro';
 
 const Tab = createBottomTabNavigator();
 
 export default function Rotas() {
 
-    const { logado } = useContext(AuthContext);
+    const { logado, cadastro } = useContext(AuthContext);
 
-    if (!logado) {
+    if (!logado && !cadastro ) {
         return (<Login />)
     }
 
+    if( !logado && cadastro ) {
+        return ( <Cadastro /> )
+    }
+   
     return (
         <NavigationContainer>
             <Tab.Navigator
