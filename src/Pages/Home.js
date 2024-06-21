@@ -7,11 +7,6 @@ import Header from '../Components/Header';
 
 export default function Home() {
   
-  const banner = [
-    require('../../assets/vestidofarm.jpg'),
-   require('../../assets/vestidofarm.jpg'), 
-   require('../../assets/vestidofarm.jpg'),  
-];
 
   const [produtos, setProdutos] = useState([]);
 
@@ -36,11 +31,9 @@ export default function Home() {
 
   return (
     <ScrollView style={css.container}>
-
+      
      <Header/>
-
      <Categorias />
-     
      
     <View style={css.vales}>
       <View style={css.boxTextVale}>
@@ -48,47 +41,44 @@ export default function Home() {
       </View>
         
     <View style={css.boxImagem}>
-      <Image style={css.imagem} source={ require ("../../assets/valeazul.png")  } />
-      <Image style={css.imagem} source={ require ("../../assets/valepassaro.png")  } />
-      <Image style={css.imagem} source={ require ("../../assets/valelaranja.png")  } />
+      <Image style={css.imagemvale} source={ require ("../../assets/valeazul.png")  } />
+      <Image style={css.imagemvale} source={ require ("../../assets/valepassaro.png")  } />
+      <Image style={css.imagemvale} source={ require ("../../assets/valelaranja.png")  } />
      </View>
-     <View style={css.boxImagem}>
-      <Image style={css.imagem} source={ require ("../../assets/valeverde.png")  } />
-      <Image style={css.imagem} source={ require ("../../assets/valebanana.png")  } />
-      <Image style={css.imagem} source={ require ("../../assets/valevermelho.png")  } />
+     <View style={css.boxvale}>
+      <Image style={css.imagemvale} source={ require ("../../assets/valeverde.png")  } />
+      <Image style={css.imagemvale} source={ require ("../../assets/valebanana.png")  } />
+      <Image style={css.imagemvale} source={ require ("../../assets/valevermelho.png")  } />
      </View>
     </View>
      
-     
-
     </ScrollView>
   )
 }
 const css = StyleSheet.create({
   container: {
+    height: "100%",
     backgroundColor: "#F4F4F4",
     flexGrow: 1,
   },
   text: {
-    
     color: "black"
   },
   vales: {
-    top: 100,
-    width: "90%",
-    height: 500,   
+    top: 150,
+    width: "90%",  
   },
   boxTextVale:{
     alignSelf: "center",
     marginLeft: 35,
+    top: 220,
   },
   textvale:{
     fontSize: 16,
-    top: 200,
   },
   boxImagem:{
-    height:200,
     width: "100%",
+    height: 400,
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",
@@ -97,7 +87,17 @@ const css = StyleSheet.create({
     gap: 10,
     top: 230,
   },
-  imagem: {
+  boxvale:{
+    width: "100%",
+    height: 400,
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignSelf: "center",
+    marginLeft: 35,
+    gap: 10,
+  },
+  imagemvale: {
     width: 100,
     height: 160,
     borderRadius: 20,

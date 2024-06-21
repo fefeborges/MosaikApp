@@ -92,10 +92,12 @@ export default function Categorias() {
   ];
 
   const banner = [
-    require('../../assets/vestidofarm.jpg'),
-   require('../../assets/valelaranja.png'), 
-   require('../../assets/vestidofarm.jpg'),  
-];
+    require('../../assets/primeirobanner.jpg'),
+    require('../../assets/segundobanner.jpg'), 
+    require('../../assets/terceirobanner.png'), 
+    require('../../assets/quartobanner.png'),  
+    require('../../assets/quintobanner.png'),  
+  ];
 
 
 
@@ -104,9 +106,10 @@ export default function Categorias() {
       <View style={css.banner}>
             <FlatList
                 horizontal={true}
+                showsHorizontalScrollIndicator={false}
                 data={banner}
                 renderItem={({ item }) => (
-                    <Image source={item} style={ [ style=css.imagem, { width: 415, height: 200 }]} />
+                    <Image source={item} style={ [ style=css.imagem, { width: 415, height: 300 }]} />
                 )}
             />
         </View>
@@ -122,7 +125,7 @@ export default function Categorias() {
           keyExtractor={item => item.id}
           horizontal={true}
           showsHorizontalScrollIndicator={false}
-          contentContainerStyle={{ padding: 10, height: 120, gap: 20, width: data1.length * 112 }}
+          contentContainerStyle={{ padding: 10, height: 120, gap: 20, width: data1.length * 100 }}
         />
       </View>
       <View style={css.flatList}>
@@ -134,7 +137,7 @@ export default function Categorias() {
           keyExtractor={item => item.id}
           horizontal={true}
           showsHorizontalScrollIndicator={false}
-          contentContainerStyle={{ padding: 10, height: 120, gap: 20, width: data2.length * 112 }}
+          contentContainerStyle={{ padding: 10, height: 120, gap: 20, width: data2.length * 100 }}
         />
       </View>
     </View>
@@ -160,7 +163,7 @@ const css = StyleSheet.create({
   },
   imagem: {
     width: "100%",
-    height: "100%",
+    height: 200,
     resizeMode: "cover",
   },
   flatList: {
