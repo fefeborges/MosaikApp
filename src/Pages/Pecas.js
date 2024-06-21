@@ -36,7 +36,7 @@ export default function Pecas() {
           <View style={css.boxpesquisa}>
               <TextInput style={css.pesquisa} placeholder='Buscar' placeholderTextColor={'#ACC5A0'}  
               TextInput={busca} onChangeText={ (digitado) => setBusca(digitado)}/>
-              { (busca != " " && produtos.length != 1) && <ActivityIndicator size="large" color="#465340" /> }  
+              
             </View>
           </View>
           <View style={css.boxfiltros}>

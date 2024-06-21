@@ -32,12 +32,15 @@ export default function Rotas() {
             <Tab.Navigator
                 screenOptions={{
                     tabBarStyle: {
-                        backgroundColor: '#ACC5A0',
+                        backgroundColor: '#6C7C64',
                         height: 60
                     },
-                    tabBarActiveTintColor: "black",
-                    tabBarInactiveTintColor: "#62735B",
-                    tabBarLabelStyle: { fontSize: 12 }
+                    tabBarActiveTintColor: "white",
+                    tabBarInactiveTintColor: "#C2D6B8",
+                    tabBarLabelStyle: { fontSize: 12 },
+                    tabBarIconStyle: {
+                        
+                    }
                 }}
             >
                 <Tab.Screen
@@ -74,9 +77,9 @@ export default function Rotas() {
                         tabBarIcon: ({ color, size }) => (
                             <MaterialCommunityIcons name="bag-personal-outline" color={color} size={30} />
                         ),
-                        tabBarBadge: 5,
+                        tabBarBadge: 2,
                         tabBarBadgeStyle: {
-                            backgroundColor: '#D9F0CE'
+                            backgroundColor: '#F8FFF5'
                         }
                     }}
                 />

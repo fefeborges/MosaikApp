@@ -14,7 +14,7 @@ export default function Produto({ titulo, imagem, preco }) {
                     <Text style={css.preco}>R${preco}</Text>
                 </View>
                 <TouchableOpacity style={css.boxcarrinho}>
-                    <MaterialCommunityIcons style={css.carrinho} name="bag-personal-outline" color={'black'} size={35} />
+                    <MaterialCommunityIcons style={css.carrinho} name="bag-personal-outline" color={'#F8FFF5'} size={35} />
                 </TouchableOpacity> 
             </View>
         </View>
@@ -49,7 +49,7 @@ const css = StyleSheet.create({
         height: 40,
         width: "25%",
         width: 45,
-        backgroundColor: "#ACC5A0",
+        backgroundColor: "#7F9375",
         borderRadius: 50,
         justifyContent: 'center',
         marginRight: 10,
